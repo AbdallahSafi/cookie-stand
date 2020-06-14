@@ -1,34 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-body,
-html {
+body {
   font-family: "Raleway", sans-serif;
-  height: 100%;
   background-color: #eee;
 }
 /* navbar */
 header {
   background-color: #fff;
-  padding: 15px 200px;
+  position: fixed;
+  padding: 15px 0;
+  width: 100%;
 }
 header img {
   width: 100px;
   height: auto;
 }
 
-/* header nav h1 {
-  font-size: xx-large;
-  display: inline-block;
-  float: left;
-  color: #ec46a3;
-}
-header nav h1:hover {
-  color: #636466;
-} */
-.navbar-style{
-    display: flex;
-    justify-content: space-between;
-
+.navbar-style {
+  display: flex;
+  justify-content: space-around;
 }
 header nav ul {
   list-style-type: none;
@@ -49,11 +39,11 @@ header nav ul li a {
   text-align: center;
   text-transform: uppercase;
   font-size: small;
-  color: #BF2431;
+  color: #590202;
 }
 
 header nav ul li a:hover {
-  color: #D9946C;
+  color: #F28749;
 }
 
 header nav ul li p {
@@ -63,9 +53,34 @@ header nav ul li p {
 }
 
 header nav ul li p span {
-  color: #ec46a3;
+  color: #590202;
 }
 
 main {
-  margin: 100px 200px;
+  padding: 100px 200px;
+}
+
+main h2 {
+  padding: 15px 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  background-color: #f28749;
+}
+
+#objContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 30px;
+  grid-row-gap: 60px;
+
+}
+
+#objContainer ul li{
+    background-color: #ADCCD9;
+    margin: 5px 0;
+    padding: 15px 0;
+    text-align: center;
+    color: #590202;
 }
