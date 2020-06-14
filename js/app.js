@@ -1,5 +1,6 @@
 'use strict';
 
+// First-Object: seattle
 var seattle = {
   customerMin: 23,
   customerMax: 65,
@@ -18,8 +19,27 @@ var seattle = {
   },
 };
 
-seattle.diplayingObject();
+// Second-Object: tokyo
+var tokyo = {
+  customerMin: 3,
+  customerMax: 24,
+  avgCookie: 1.2,
+  customerRandomNum: 0,
+  cookiesRandomNum: 0,
+  totalCookies: [],
+  getCustomerRandom: function (min, max) {
+    this.customerRandomNum = generateRandomCostumerNum(min, max);
+  },
+  getCookiesNum: function (costumerNum, cookieNum) {
+    this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
+  },
+  diplayingObject: function () {
+    rendering(this, 'Tokyo');
+  },
+};
 
+seattle.diplayingObject();
+tokyo.diplayingObject();
 // --------------Functions Section -------------------
 
 // Generat a random number of  given min and max value
@@ -49,7 +69,8 @@ function rendering(obj, title) {
       obj.totalCookies.push(obj.cookiesRandomNum);
       var listItem = document.createElement('li');
       var hour = i + 5;
-      listItem.textContent = hour + 'am' + ' : ' + obj.cookiesRandomNum+ ' cookies';
+      listItem.textContent =
+        hour + 'am' + ' : ' + obj.cookiesRandomNum + ' cookies';
       list.appendChild(listItem);
     } else if (i === 7) {
       //Generate Cookies
@@ -58,7 +79,8 @@ function rendering(obj, title) {
       obj.totalCookies.push(obj.cookiesRandomNum);
       listItem = document.createElement('li');
       hour = i + 5;
-      listItem.textContent = hour + 'pm' + ' : ' + obj.cookiesRandomNum+ ' cookies';
+      listItem.textContent =
+        hour + 'pm' + ' : ' + obj.cookiesRandomNum + ' cookies';
       list.appendChild(listItem);
     } else {
       //Generate Cookies
@@ -67,7 +89,8 @@ function rendering(obj, title) {
       obj.totalCookies.push(obj.cookiesRandomNum);
       listItem = document.createElement('li');
       hour = i - 7;
-      listItem.textContent = hour + 'pm' + ' : ' + obj.cookiesRandomNum+ ' cookies';
+      listItem.textContent =
+        hour + 'pm' + ' : ' + obj.cookiesRandomNum + ' cookies';
       list.appendChild(listItem);
     }
   }
