@@ -38,8 +38,29 @@ var tokyo = {
   },
 };
 
+// Thired-Object: Dubai
+var dubai = {
+  customerMin: 11,
+  customerMax: 38,
+  avgCookie: 3.7,
+  customerRandomNum: 0,
+  cookiesRandomNum: 0,
+  totalCookies: [],
+  getCustomerRandom: function (min, max) {
+    this.customerRandomNum = generateRandomCostumerNum(min, max);
+  },
+  getCookiesNum: function (costumerNum, cookieNum) {
+    this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
+  },
+  diplayingObject: function () {
+    rendering(this, 'Dubai');
+  },
+};
+
 seattle.diplayingObject();
 tokyo.diplayingObject();
+dubai.diplayingObject();
+
 // --------------Functions Section -------------------
 
 // Generat a random number of  given min and max value
