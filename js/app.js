@@ -96,18 +96,12 @@ var lima = {
   },
 };
 
-
-
 //----------Displaying All Objects----------------
 seattle.diplayingObject();
 tokyo.diplayingObject();
 dubai.diplayingObject();
 paris.diplayingObject();
 lima.diplayingObject();
-
-
-
-
 
 // --------------Functions Section -------------------
 // Generat a random number of  given min and max value
@@ -122,11 +116,14 @@ function multiplyCookieCostumer(costumerNum, cookieNum) {
 
 //Rendering Function
 function rendering(obj, title) {
+  var objectsContainer = document.getElementById('objContainer');
+  var container = document.createElement('div');
+  objectsContainer.appendChild(container);
+
   //Title
-  var mainTag = document.getElementsByTagName('main')[0];
   var heading = document.createElement('h2');
   heading.textContent = title;
-  mainTag.appendChild(heading);
+  container.appendChild(heading);
   var list = document.createElement('ul');
 
   for (var i = 1; i <= 14; i++) {
@@ -171,5 +168,5 @@ function rendering(obj, title) {
   listItem = document.createElement('li');
   listItem.textContent = 'Total: ' + countOfCookies + ' cookies';
   list.appendChild(listItem);
-  mainTag.appendChild(list);
+  container.appendChild(list);
 }
