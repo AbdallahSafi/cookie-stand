@@ -1,5 +1,6 @@
 'use strict';
 
+//------------Objects Section ----------------
 // First-Object: seattle
 var seattle = {
   customerMin: 23,
@@ -57,12 +58,58 @@ var dubai = {
   },
 };
 
+// Fourth-Object: Paris
+var paris = {
+  customerMin: 20,
+  customerMax: 38,
+  avgCookie: 2.3,
+  customerRandomNum: 0,
+  cookiesRandomNum: 0,
+  totalCookies: [],
+  getCustomerRandom: function (min, max) {
+    this.customerRandomNum = generateRandomCostumerNum(min, max);
+  },
+  getCookiesNum: function (costumerNum, cookieNum) {
+    this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
+  },
+  diplayingObject: function () {
+    rendering(this, 'Paris');
+  },
+};
+
+// Fifth-Object: Lima
+var lima = {
+  customerMin: 20,
+  customerMax: 38,
+  avgCookie: 2.3,
+  customerRandomNum: 0,
+  cookiesRandomNum: 0,
+  totalCookies: [],
+  getCustomerRandom: function (min, max) {
+    this.customerRandomNum = generateRandomCostumerNum(min, max);
+  },
+  getCookiesNum: function (costumerNum, cookieNum) {
+    this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
+  },
+  diplayingObject: function () {
+    rendering(this, 'Lima');
+  },
+};
+
+
+
+//----------Displaying All Objects----------------
 seattle.diplayingObject();
 tokyo.diplayingObject();
 dubai.diplayingObject();
+paris.diplayingObject();
+lima.diplayingObject();
+
+
+
+
 
 // --------------Functions Section -------------------
-
 // Generat a random number of  given min and max value
 function generateRandomCostumerNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
