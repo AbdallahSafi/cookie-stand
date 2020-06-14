@@ -1,0 +1,84 @@
+'use strict';
+
+var seattle = {
+  customerMin: 23,
+  customerMax: 65,
+  avgCookie: 6.3,
+  customerRandomNum: 0,
+  cookiesRandomNum: 0,
+  totalCookies: [],
+  getCustomerRandom: function (min, max) {
+    this.customerRandomNum = generateRandomCostumerNum(min, max);
+  },
+  getCookiesNum: function (costumerNum, cookieNum) {
+    this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
+  },
+  diplayingObject: function () {
+    rendering(this, 'seattle');
+  },
+};
+
+seattle.diplayingObject();
+
+// --------------Functions Section -------------------
+
+// Generat a random number of  given min and max value
+function generateRandomCostumerNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+//calculate the product of a given two parameter
+function multiplyCookieCostumer(costumerNum, cookieNum) {
+  return Math.floor(costumerNum * cookieNum);
+}
+
+//Rendering Function
+function rendering(obj, title) {
+  //Title
+  var mainTag = document.getElementsByTagName('main')[0];
+  var heading = document.createElement('h2');
+  heading.textContent = title;
+  mainTag.appendChild(heading);
+  var list = document.createElement('ul');
+
+  for (var i = 1; i <= 14; i++) {
+    if (i < 7) {
+      //Generate Cookies
+      obj.getCustomerRandom(obj.customerMin, obj.customerMax);
+      obj.getCookiesNum(obj.customerRandomNum, obj.avgCookie);
+      obj.totalCookies.push(obj.cookiesRandomNum);
+      var listItem = document.createElement('li');
+      var hour = i + 5;
+      listItem.textContent = hour + 'am' + ' : ' + obj.cookiesRandomNum+ ' cookies';
+      list.appendChild(listItem);
+    } else if (i === 7) {
+      //Generate Cookies
+      obj.getCustomerRandom(obj.customerMin, obj.customerMax);
+      obj.getCookiesNum(obj.customerRandomNum, obj.avgCookie);
+      obj.totalCookies.push(obj.cookiesRandomNum);
+      listItem = document.createElement('li');
+      hour = i + 5;
+      listItem.textContent = hour + 'pm' + ' : ' + obj.cookiesRandomNum+ ' cookies';
+      list.appendChild(listItem);
+    } else {
+      //Generate Cookies
+      obj.getCustomerRandom(obj.customerMin, obj.customerMax);
+      obj.getCookiesNum(obj.customerRandomNum, obj.avgCookie);
+      obj.totalCookies.push(obj.cookiesRandomNum);
+      listItem = document.createElement('li');
+      hour = i - 7;
+      listItem.textContent = hour + 'pm' + ' : ' + obj.cookiesRandomNum+ ' cookies';
+      list.appendChild(listItem);
+    }
+  }
+  console.log(obj.totalCookies);
+  var countOfCookies = 0;
+  for (var j = 0; j < obj.totalCookies.length; j++) {
+    countOfCookies = countOfCookies + obj.totalCookies[j];
+  }
+
+  listItem = document.createElement('li');
+  listItem.textContent = 'Total: ' + countOfCookies + ' cookies';
+  list.appendChild(listItem);
+  mainTag.appendChild(list);
+}
