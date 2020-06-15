@@ -15,7 +15,7 @@ var seattle = {
   getCookiesNum: function (costumerNum, cookieNum) {
     this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
   },
-  diplayingObject: function () {
+  displayingObject: function () {
     rendering(this, 'seattle');
   },
 };
@@ -34,7 +34,7 @@ var tokyo = {
   getCookiesNum: function (costumerNum, cookieNum) {
     this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
   },
-  diplayingObject: function () {
+  displayingObject: function () {
     rendering(this, 'Tokyo');
   },
 };
@@ -53,7 +53,7 @@ var dubai = {
   getCookiesNum: function (costumerNum, cookieNum) {
     this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
   },
-  diplayingObject: function () {
+  displayingObject: function () {
     rendering(this, 'Dubai');
   },
 };
@@ -72,7 +72,7 @@ var paris = {
   getCookiesNum: function (costumerNum, cookieNum) {
     this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
   },
-  diplayingObject: function () {
+  displayingObject: function () {
     rendering(this, 'Paris');
   },
 };
@@ -91,17 +91,17 @@ var lima = {
   getCookiesNum: function (costumerNum, cookieNum) {
     this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
   },
-  diplayingObject: function () {
+  displayingObject: function () {
     rendering(this, 'Lima');
   },
 };
 
 //----------Displaying All Objects----------------
-seattle.diplayingObject();
-tokyo.diplayingObject();
-dubai.diplayingObject();
-paris.diplayingObject();
-lima.diplayingObject();
+seattle.displayingObject();
+tokyo.displayingObject();
+dubai.displayingObject();
+paris.displayingObject();
+lima.displayingObject();
 
 // --------------Functions Section -------------------
 // Generat a random number of  given min and max value
