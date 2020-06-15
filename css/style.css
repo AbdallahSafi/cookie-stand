@@ -76,16 +76,16 @@ main h2 {
 
 /* Table Style */
 table {
+  table-layout: auto;
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-td,
-th {
+td,th {
   border: 1px solid #dddddd;
-  text-align: left;
-  padding: 10px;
+  text-align: center;
+  padding: 10px 6px;
   color: #590202;
 }
 th {

@@ -56,16 +56,22 @@ var dubai = new SalmonCookie('Dubai', 11, 38, 3.7);
 var paris = new SalmonCookie('Paris', 20, 65, 2.3);
 var lima = new SalmonCookie('Lima', 2, 16, 4.6);
 
-display();
-// --------------Functions Section -------------------
+
 
 //-----------displaying all the table -------------
-function display(){
-  //adding table element
-  var container = document.getElementById('objContainer');
-  var table = document.createElement('table');
-  container.appendChild(table);
 
+//adding table element
+var container = document.getElementById('objContainer');
+var table = document.createElement('table');
+container.appendChild(table);
+
+displayHeader();
+displayData();
+displayFooter();
+
+// --------------Functions Section -------------------
+
+function displayHeader() {
   //adding the header of the table
   var timesRow = document.createElement('tr');
   var emptyCell = document.createElement('th');
@@ -80,10 +86,12 @@ function display(){
 
   // Daily Location Total
   //adding the label
-  var dailyTotalLabel = document.createElement('td');
+  var dailyTotalLabel = document.createElement('th');
   dailyTotalLabel.textContent = 'Daily Location Total';
   timesRow.appendChild(dailyTotalLabel);
+}
 
+function displayData() {
   //adding the title and the data to the table
   SalmonCookie.prototype.render = function () {
     var dataRow = document.createElement('tr');
@@ -109,7 +117,9 @@ function display(){
     salmonObjs[d].getCookiesNum();
     salmonObjs[d].render();
   }
+}
 
+function displayFooter() {
   //----------- Dispalying the totals--------------
   var totalsArr = getTotalPerhour()[0];
   var totalsSum = getTotalPerhour()[1];
@@ -132,6 +142,7 @@ function display(){
   totalsSumCell.textContent = totalsSum;
   totalsRow.appendChild(totalsSumCell);
 }
+
 // Generat a random number of  given min and max value
 function generateRandomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
