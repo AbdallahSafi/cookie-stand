@@ -1,172 +1,169 @@
 'use strict';
 
-//------------Objects Section ----------------
-// First-Object: seattle
-var seattle = {
-  customerMin: 23,
-  customerMax: 65,
-  avgCookie: 6.3,
-  customerRandomNum: 0,
-  cookiesRandomNum: 0,
-  totalCookies: [],
-  getCustomerRandom: function (min, max) {
-    this.customerRandomNum = generateRandomCostumerNum(min, max);
-  },
-  getCookiesNum: function (costumerNum, cookieNum) {
-    this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
-  },
-  displayingObject: function () {
-    rendering(this, 'seattle');
-  },
+// ---------------- Salmon cookie Object ----------------
+var salmonObjs = [];
+function SalmonCookie(name, customerMin, customerMax, avgCookie) {
+  (this.name = name),
+  (this.times = [
+    '6:00am',
+    '7:00am',
+    '8:00am',
+    '9:00am',
+    '10:00am',
+    '11:00am',
+    '12:00pm',
+    '1:00pm',
+    '2:00pm',
+    '3:00pm',
+    '4:00pm',
+    '5:00pm',
+    '6:00pm',
+    '7:00pm',
+  ]);
+  this.customerMin = customerMin;
+  this.customerMax = customerMax;
+  this.customerRandomNums = [];
+  this.avgCookie = avgCookie;
+  this.cookiesRandomNums = [];
+  this.totalCookiesPerLocation = 0;
+  salmonObjs.push(this);
+}
+
+// This function should generat a random number for a given max and min numbers
+SalmonCookie.prototype.getCustomerRandom = function () {
+  for (var i = 0; i < this.times.length; i++) {
+    var randomNum = generateRandomNum(this.customerMin, this.customerMax);
+    //adding to array
+    this.customerRandomNums.push(randomNum);
+  }
 };
 
-// Second-Object: tokyo
-var tokyo = {
-  customerMin: 3,
-  customerMax: 24,
-  avgCookie: 1.2,
-  customerRandomNum: 0,
-  cookiesRandomNum: 0,
-  totalCookies: [],
-  getCustomerRandom: function (min, max) {
-    this.customerRandomNum = generateRandomCostumerNum(min, max);
-  },
-  getCookiesNum: function (costumerNum, cookieNum) {
-    this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
-  },
-  displayingObject: function () {
-    rendering(this, 'Tokyo');
-  },
+// This function should calculate the cookies avg number for each hour
+SalmonCookie.prototype.getCookiesNum = function () {
+  for (var j = 0; j < this.customerRandomNums.length; j++) {
+    var cookieNum = multiply(this.customerRandomNums[j], this.avgCookie);
+    //adding to array
+    this.cookiesRandomNums.push(cookieNum);
+    // sum all the items
+    this.totalCookiesPerLocation = this.totalCookiesPerLocation + cookieNum;
+  }
 };
 
-// Thired-Object: Dubai
-var dubai = {
-  customerMin: 11,
-  customerMax: 38,
-  avgCookie: 3.7,
-  customerRandomNum: 0,
-  cookiesRandomNum: 0,
-  totalCookies: [],
-  getCustomerRandom: function (min, max) {
-    this.customerRandomNum = generateRandomCostumerNum(min, max);
-  },
-  getCookiesNum: function (costumerNum, cookieNum) {
-    this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
-  },
-  displayingObject: function () {
-    rendering(this, 'Dubai');
-  },
-};
+// Creating the objects
+var seattle = new SalmonCookie('Seattle', 23, 65, 6.3);
+var tokyo = new SalmonCookie('Tokyo', 3, 24, 1.2);
+var dubai = new SalmonCookie('Dubai', 11, 38, 3.7);
+var paris = new SalmonCookie('Paris', 20, 65, 2.3);
+var lima = new SalmonCookie('Lima', 2, 16, 4.6);
 
-// Fourth-Object: Paris
-var paris = {
-  customerMin: 20,
-  customerMax: 38,
-  avgCookie: 2.3,
-  customerRandomNum: 0,
-  cookiesRandomNum: 0,
-  totalCookies: [],
-  getCustomerRandom: function (min, max) {
-    this.customerRandomNum = generateRandomCostumerNum(min, max);
-  },
-  getCookiesNum: function (costumerNum, cookieNum) {
-    this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
-  },
-  displayingObject: function () {
-    rendering(this, 'Paris');
-  },
-};
 
-// Fifth-Object: Lima
-var lima = {
-  customerMin: 20,
-  customerMax: 38,
-  avgCookie: 2.3,
-  customerRandomNum: 0,
-  cookiesRandomNum: 0,
-  totalCookies: [],
-  getCustomerRandom: function (min, max) {
-    this.customerRandomNum = generateRandomCostumerNum(min, max);
-  },
-  getCookiesNum: function (costumerNum, cookieNum) {
-    this.cookiesRandomNum = multiplyCookieCostumer(costumerNum, cookieNum);
-  },
-  displayingObject: function () {
-    rendering(this, 'Lima');
-  },
-};
 
-//----------Displaying All Objects----------------
-seattle.displayingObject();
-tokyo.displayingObject();
-dubai.displayingObject();
-paris.displayingObject();
-lima.displayingObject();
+//-----------displaying all the table -------------
+
+//adding table element
+var container = document.getElementById('objContainer');
+var table = document.createElement('table');
+container.appendChild(table);
+
+displayHeader();
+displayData();
+displayFooter();
 
 // --------------Functions Section -------------------
+
+function displayHeader() {
+  //adding the header of the table
+  var timesRow = document.createElement('tr');
+  var emptyCell = document.createElement('th');
+  emptyCell.textContent = '';
+  timesRow.appendChild(emptyCell);
+  for (var i = 0; i < salmonObjs[0].times.length; i++) {
+    var timesCell = document.createElement('th');
+    timesCell.textContent = salmonObjs[0].times[i];
+    timesRow.appendChild(timesCell);
+  }
+  table.appendChild(timesRow);
+
+  // Daily Location Total
+  //adding the label
+  var dailyTotalLabel = document.createElement('th');
+  dailyTotalLabel.textContent = 'Daily Location Total';
+  timesRow.appendChild(dailyTotalLabel);
+}
+
+function displayData() {
+  //adding the title and the data to the table
+  SalmonCookie.prototype.render = function () {
+    var dataRow = document.createElement('tr');
+    //Adding title column
+    var titleCell = document.createElement('td');
+    titleCell.textContent = this.name;
+    dataRow.appendChild(titleCell);
+    //Adding data
+    for (var i = 0; i < this.times.length; i++) {
+      var dataCell = document.createElement('td');
+      dataCell.textContent = this.cookiesRandomNums[i];
+      dataRow.appendChild(dataCell);
+    }
+    var dailyTotalCell = document.createElement('td');
+    dailyTotalCell.textContent = this.totalCookiesPerLocation;
+    dataRow.appendChild(dailyTotalCell);
+    table.appendChild(dataRow);
+  };
+
+  //----adding the functions to the objects-----
+  for (var d = 0; d < salmonObjs.length; d++) {
+    salmonObjs[d].getCustomerRandom();
+    salmonObjs[d].getCookiesNum();
+    salmonObjs[d].render();
+  }
+}
+
+function displayFooter() {
+  //----------- Dispalying the totals--------------
+  var totalsArr = getTotalPerhour()[0];
+  var totalsSum = getTotalPerhour()[1];
+
+  var totalsRow = document.createElement('tr');
+  table.appendChild(totalsRow);
+  //adding total label
+  var totalsLabel = document.createElement('td');
+  totalsLabel.textContent = 'Totals';
+  totalsRow.appendChild(totalsLabel);
+
+  //adding total array
+  for (var v = 0; v < totalsArr.length; v++) {
+    var totalCell = document.createElement('td');
+    totalCell.textContent = totalsArr[v];
+    totalsRow.appendChild(totalCell);
+  }
+  //adding the sum of totals cell
+  var totalsSumCell = document.createElement('td');
+  totalsSumCell.textContent = totalsSum;
+  totalsRow.appendChild(totalsSumCell);
+}
+
 // Generat a random number of  given min and max value
-function generateRandomCostumerNum(min, max) {
+function generateRandomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 //calculate the product of a given two parameter
-function multiplyCookieCostumer(costumerNum, cookieNum) {
-  return Math.floor(costumerNum * cookieNum);
+function multiply(a, b) {
+  return Math.floor(a * b);
 }
 
-//Rendering Function
-function rendering(obj, title) {
-  var objectsContainer = document.getElementById('objContainer');
-  var container = document.createElement('div');
-  objectsContainer.appendChild(container);
-
-  //Title
-  var heading = document.createElement('h2');
-  heading.textContent = title;
-  container.appendChild(heading);
-  var list = document.createElement('ul');
-
-  for (var i = 1; i <= 14; i++) {
-    if (i < 7) {
-      //Generate Cookies
-      obj.getCustomerRandom(obj.customerMin, obj.customerMax);
-      obj.getCookiesNum(obj.customerRandomNum, obj.avgCookie);
-      obj.totalCookies.push(obj.cookiesRandomNum);
-      var listItem = document.createElement('li');
-      var hour = i + 5;
-      listItem.textContent =
-        hour + 'am' + ' : ' + obj.cookiesRandomNum + ' cookies';
-      list.appendChild(listItem);
-    } else if (i === 7) {
-      //Generate Cookies
-      obj.getCustomerRandom(obj.customerMin, obj.customerMax);
-      obj.getCookiesNum(obj.customerRandomNum, obj.avgCookie);
-      obj.totalCookies.push(obj.cookiesRandomNum);
-      listItem = document.createElement('li');
-      hour = i + 5;
-      listItem.textContent =
-        hour + 'pm' + ' : ' + obj.cookiesRandomNum + ' cookies';
-      list.appendChild(listItem);
-    } else {
-      //Generate Cookies
-      obj.getCustomerRandom(obj.customerMin, obj.customerMax);
-      obj.getCookiesNum(obj.customerRandomNum, obj.avgCookie);
-      obj.totalCookies.push(obj.cookiesRandomNum);
-      listItem = document.createElement('li');
-      hour = i - 7;
-      listItem.textContent =
-        hour + 'pm' + ' : ' + obj.cookiesRandomNum + ' cookies';
-      list.appendChild(listItem);
+//Calculating the Total of cookies per hour
+function getTotalPerhour() {
+  var totalPerHour = [];
+  var sumTotalPerHour = 0;
+  for (var z = 0; z < salmonObjs[0].times.length; z++) {
+    var perHour = 0;
+    for (var y = 0; y < salmonObjs.length; y++) {
+      perHour = perHour + salmonObjs[y].cookiesRandomNums[z];
     }
+    totalPerHour.push(perHour);
+    sumTotalPerHour = sumTotalPerHour + perHour;
   }
-  console.log(obj.totalCookies);
-  var countOfCookies = 0;
-  for (var j = 0; j < obj.totalCookies.length; j++) {
-    countOfCookies = countOfCookies + obj.totalCookies[j];
-  }
-
-  listItem = document.createElement('li');
-  listItem.textContent = 'Total: ' + countOfCookies + ' cookies';
-  list.appendChild(listItem);
-  container.appendChild(list);
+  return [totalPerHour, sumTotalPerHour];
 }

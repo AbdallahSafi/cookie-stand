@@ -11,7 +11,6 @@ header {
   padding: 15px 0;
   width: 100%;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
-
 }
 header img {
   width: 100px;
@@ -45,7 +44,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  color: #F28749;
+  color: #f28749;
 }
 
 header nav ul li p {
@@ -72,27 +71,47 @@ main h2 {
 }
 
 #objContainer {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 30px;
-  grid-row-gap: 60px;
-
+  margin-top: 100px;
 }
 
-#objContainer ul li{
-    background-color: #ADCCD9;
-    margin: 5px 0;
-    padding: 15px 0;
-    text-align: center;
-    color: #590202;
+/* Table Style */
+table {
+  table-layout: auto;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-#objContainer ul li:last-child{
-    background-color: #D9D9D9;
-    margin: 5px 0;
-    padding: 15px 0;
-    text-align: center;
-    color: #590202;
-    border: 1px solid #590202;
+td,th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 10px 6px;
+  color: #590202;
+}
+th {
+  font-weight: bold;
+  color:#f28749;
 }
 
+tr:nth-child(odd) {
+  background-color: #adccd9;
+}
+td:first-child {
+  background-color: #eee;
+  color: #590202;
+}
+
+tr:first-child th {
+  border: 0;
+  background-color: #eee;
+  /* background-color: green; */
+}
+
+tr:last-child {
+  background-color: #f28749;
+  
+}
+
+tr:last-child td:not(:first-child){
+  color: #fff;
+}
