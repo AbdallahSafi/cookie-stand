@@ -2,12 +2,15 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #eee;
+  background-color: #F4F4F9;
+  /* background-color: #fff; */
+
 }
 /* navbar */
 header {
   background-color: #fff;
   position: fixed;
+  top: 0;
   padding: 15px 0;
   width: 100%;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
@@ -40,35 +43,20 @@ header nav ul li a {
   text-align: center;
   text-transform: uppercase;
   font-size: small;
-  color: #590202;
+  color: #220901;
 }
 
 header nav ul li a:hover {
-  color: #f28749;
+  color: #BC3908;
 }
 
-header nav ul li p {
-  display: none;
-  margin-left: 30px;
-  color: #636466;
-}
 
-header nav ul li p span {
-  color: #590202;
-}
 
 main {
   padding: 100px 0;
 }
 
-main h2 {
-  padding: 15px 0;
-  color: #fff;
-  font-weight: bold;
-  font-size: larger;
-  text-align: center;
-  background-color: #f28749;
-}
+
 
 #objContainer {
   margin-top: 100px;
@@ -84,41 +72,55 @@ table {
   border-collapse: collapse;
   margin-right: auto;
   margin-left: auto;
- 
-  /* width: 100%; */
+  color: #941B0C;
+
 }
 
 td,th {
-  border: 1px solid #ddd;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
   text-align: center;
   padding: 10px 6px;
-  color: #590202;
 }
+
+td:last-child {
+  border-right: 1px solid #ddd;
+ 
+}
+
 th {
   font-weight: bold;
-  color:#f28749;
+  color: #220901;
+  
+}
+tr:nth-child(2){
+  border-top: 1px solid #B8DBD9;;
 }
 
 tr:nth-child(odd) {
-  background-color: #adccd9;
+  background-color: #dcebea;
+  color: #621708;
+ 
 }
 td:first-child {
-  background-color: #eee;
-  color: #590202;
+  background-color: #B8DBD9;
+  color: #220901;
+  font-family: 'Times New Roman', Times, serif, serif
 }
 
 tr:first-child th {
   border: 0;
-  background-color: #eee;
+  background-color: #F4F4F9;
+  font-family: 'Times New Roman', Times, serif, serif
   /* background-color: green; */
 }
 
 tr:last-child {
-  background-color: #f28749;
+  background-color: #F6AA1C;
   
 }
 
 
 tr:last-child td:not(:first-child){
-  color: #fff;
+  color: #220901;
 }
