@@ -58,7 +58,7 @@ header nav ul li p span {
 }
 
 main {
-  padding: 100px 200px;
+  padding: 100px 0;
 }
 
 main h2 {
@@ -72,6 +72,9 @@ main h2 {
 
 #objContainer {
   margin-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
 }
 
 /* Table Style */
@@ -79,11 +82,14 @@ table {
   table-layout: auto;
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+ 
+  /* width: 100%; */
 }
 
 td,th {
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   text-align: center;
   padding: 10px 6px;
   color: #590202;
@@ -111,6 +117,7 @@ tr:last-child {
   background-color: #f28749;
   
 }
+
 
 tr:last-child td:not(:first-child){
   color: #fff;

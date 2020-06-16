@@ -29,7 +29,7 @@ function SalmonCookie(name, customerMin, customerMax, avgCookie) {
   salmonObjs.push(this);
 }
 
-// This function should generat a random number for a given max and min numbers
+// This function should generat a random number for a given max and min numbers for cust0mers
 SalmonCookie.prototype.getCustomerRandom = function () {
   for (var i = 0; i < this.times.length; i++) {
     var randomNum = generateRandomNum(this.customerMin, this.customerMax);
