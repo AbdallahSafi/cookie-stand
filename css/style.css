@@ -2,7 +2,7 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #eee;
+  background-color: #F4F4F9;
 }
 /* navbar */
 header {
@@ -92,23 +92,23 @@ th {
   
 }
 tr:nth-child(2){
-  border-top: 1px solid #ddd;;
+  border-top: 1px solid #B8DBD9;;
 }
 
 tr:nth-child(odd) {
-  background-color: #ddd;
+  background-color: #dcebea;
   color: #621708;
  
 }
 td:first-child {
-  background-color: #ddd;
+  background-color: #B8DBD9;
   color: #220901;
   font-family: 'Times New Roman', Times, serif, serif
 }
 
 tr:first-child th {
   border: 0;
-  background-color: #eee;
+  background-color: #F4F4F9;
   font-family: 'Times New Roman', Times, serif, serif
   /* background-color: green; */
 }
