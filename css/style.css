@@ -132,7 +132,6 @@ tr:last-child td:not(:first-child) {
   background-color: black;
 }
 
-
 .welcome-container {
   position: relative;
   top: 0;
@@ -205,15 +204,14 @@ tr:last-child td:not(:first-child) {
   transform: scale(0.99);
 }
 
-
 /* A breif Section */
 
 .breif-container {
   margin: 0 130px;
 }
-.breif-container p{
-font-family: Arial, Helvetica, sans-serif;
-color: #2B4162;
+.breif-container p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2b4162;
 }
 
 .breif-title {
@@ -226,7 +224,6 @@ color: #2B4162;
 .breif-paragraph {
   margin: 0 0 30px 0;
   padding: 0;
- 
 }
 
 .breif-paragraph1 {
@@ -249,7 +246,7 @@ color: #2B4162;
   width: 50vw;
 }
 
- /* Featured Branch Section  */
+/* Featured Branch Section  */
 .Branch-container {
   /* margin-left: 100px;
   margin-right: 100px; */
@@ -257,7 +254,7 @@ color: #2B4162;
 
 .Branch-container p {
   font-family: Arial, Helvetica, sans-serif;
-  color: #2B4162;
+  color: #2b4162;
 }
 .bg-light-white {
   background-color: #fff;
@@ -286,14 +283,13 @@ color: #2B4162;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-row-gap: 30px;
-  left: 0;
-  right: 0;
+  width: 90%;
+  margin: 0 auto;
+  
 }
 
 .Branch-img {
   position: relative;
-  /* left: 0;
-  top: 0; */
   width: 350px;
   height: 450px;
   object-fit: cover;
@@ -303,39 +299,34 @@ color: #2B4162;
 }
 
 .Branch-list li {
- 
   margin: 0 auto;
 }
 
 .Branch-list li p {
- 
   margin: 10px 0;
   font-size: 1em;
 }
 
 .Branch-list li p i {
   margin-right: 10px;
-  color: #F6AA1C;
+  color: #f6aa1c;
 }
 
 /* footer section */
 
-.footer2{
+.footer2 {
   text-align: center;
   padding: 15px;
-  color: #F4F4F9;
-  background-color:#A31621 ;
+  color: #f4f4f9;
+  background-color: #a31621;
   position: absolute;
   bottom: 0;
   width: 100%;
-
 }
 
-.footer1{
+.footer1 {
   text-align: center;
   padding: 15px;
-  color: #F4F4F9;
-  background-color:#A31621 ;
+  color: #f4f4f9;
+  background-color: #a31621;
 }
-  
-
