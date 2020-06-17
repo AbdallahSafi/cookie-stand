@@ -250,11 +250,9 @@ color: #2B4162;
 }
 
  /* Featured Branch Section  */
-
-
-
 .Branch-container {
-  margin: 0 130px;
+  /* margin-left: 100px;
+  margin-right: 100px; */
 }
 
 .Branch-container p {
@@ -288,13 +286,14 @@ color: #2B4162;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-row-gap: 30px;
-
+  left: 0;
+  right: 0;
 }
 
 .Branch-img {
   position: relative;
-  left: 0;
-  top: 0;
+  /* left: 0;
+  top: 0; */
   width: 350px;
   height: 450px;
   object-fit: cover;
@@ -303,11 +302,15 @@ color: #2B4162;
   border: 1px solid #ddd;
 }
 
+.Branch-list li {
+ 
+  margin: 0 auto;
+}
 
 .Branch-list li p {
  
   margin: 10px 0;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .Branch-list li p i {
