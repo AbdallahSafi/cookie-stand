@@ -32,68 +32,72 @@
     <main style="margin-top: 150px;">
       <h2 class="Branch-title">Salmon Cookies Sales</h2>
       <p class="Branch-subtitle">Check out our Sales Statistics</p>
-     
+
       <!-- TABLE PART -->
       <div id="objContainer">
-         <!-- ADD LOCATION BUTTON -->
-      <button id="myBtn" class="add-location-btn"><span><i class="fas fa-plus"></i></span> location</button>
+        <!-- ADD LOCATION BUTTON -->
+        <button id="myBtn" class="add-location-btn">
+          <span><i class="fas fa-plus"></i></span> location
+        </button>
       </div>
 
       <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Adding new location</h2>
-          <!-- <div class="border"></div> -->
-        </div>
-        <div class="modal-body">
-          <form id='locationForm'>
-            <div class="container">
-              <label for="name"><b>Name</b></label>
-              <input
-                id="name"
-                type="text"
-                placeholder="The name of the location"
-                name="name"
-                required
-              />
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Adding new location</h2>
+            <!-- <div class="border"></div> -->
+          </div>
+          <div class="modal-body">
+            <form id="locationForm">
+              <fieldset>
+                <div class="container">
+                  <label for="name"><b>Name</b></label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="The name of the location"
+                    name="name"
+                    required
+                  />
 
-              <label for="minimum"><b>Customer minimum</b></label>
-              <input
-                id="minimum"
-                type="number"
-                placeholder="The minimum number of customers per hour"
-                name="minimum"
-                required
-              />
+                  <label for="minimum"><b>Customer minimum</b></label>
+                  <input
+                    id="minimum"
+                    type="number"
+                    placeholder="The minimum number of customers per hour"
+                    name="minimum"
+                    required
+                  />
 
-              <label for="maximum"><b>Customer maximum</b></label>
-              <input
-                id="maximum"
-                type="number"
-                placeholder="The maximum number of customers per hour"
-                name="maximum"
-                required
-              />
+                  <label for="maximum"><b>Customer maximum</b></label>
+                  <input
+                    id="maximum"
+                    type="number"
+                    placeholder="The maximum number of customers per hour"
+                    name="maximum"
+                    required
+                  />
 
-              <label for="average"><b>Average</b></label>
-              <input
-                id="average"
-                type="number"
-                placeholder="The average number of cookies purchased per customer"
-                name="average"
-                required
-              />
+                  <label for="average"><b>Average</b></label>
+                  <input
+                    id="average"
+                    type="number"
+                    placeholder="The average number of cookies purchased per customer"
+                    name="average"
+                    required
+                  />
 
-              <hr />
-              <button  type="submit"  class="submitBtn">Submit</button>
-            </div>
-          </form>
+                  <hr />
+                  <button type="submit" class="submitBtn">Submit</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
     </main>
 
     <!-- FOOTER SECTION -->
