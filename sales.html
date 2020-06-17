@@ -6,8 +6,13 @@
     <title>Sales</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- HEADER SECTION -->
     <header>
       <nav>
         <div class="navbar-style">
@@ -23,14 +28,75 @@
       </nav>
     </header>
 
+    <!-- MAIN SECTION -->
     <main style="margin-top: 150px;">
       <h2 class="Branch-title">Salmon Cookies Sales</h2>
-      <p class="Branch-subtitle" >Check out our Sales Statistics</p>
-        <div id='objContainer'>
-          
+      <p class="Branch-subtitle">Check out our Sales Statistics</p>
+     
+      <!-- TABLE PART -->
+      <div id="objContainer">
+         <!-- ADD LOCATION BUTTON -->
+      <button id="myBtn" class="add-location-btn"><span><i class="fas fa-plus"></i></span> location</button>
+      </div>
+
+      <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Adding new location</h2>
+          <!-- <div class="border"></div> -->
         </div>
+        <div class="modal-body">
+          <form id='locationForm'>
+            <div class="container">
+              <label for="name"><b>Name</b></label>
+              <input
+                id="name"
+                type="text"
+                placeholder="The name of the location"
+                name="name"
+                required
+              />
+
+              <label for="minimum"><b>Customer minimum</b></label>
+              <input
+                id="minimum"
+                type="number"
+                placeholder="The minimum number of customers per hour"
+                name="minimum"
+                required
+              />
+
+              <label for="maximum"><b>Customer maximum</b></label>
+              <input
+                id="maximum"
+                type="number"
+                placeholder="The maximum number of customers per hour"
+                name="maximum"
+                required
+              />
+
+              <label for="average"><b>Average</b></label>
+              <input
+                id="average"
+                type="number"
+                placeholder="The average number of cookies purchased per customer"
+                name="average"
+                required
+              />
+
+              <hr />
+              <button  type="submit"  class="submitBtn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     </main>
 
+    <!-- FOOTER SECTION -->
     <footer class="footer2">
       © 2020 Salmon Cookies Inc. All rights reserved. Privacy Policy
     </footer>
