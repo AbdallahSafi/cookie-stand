@@ -55,7 +55,9 @@ header nav ul li a:hover {
 } */
 
 #objContainer {
-  /* margin-top: 100px; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: auto;
@@ -70,6 +72,7 @@ table {
   border-collapse: collapse;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 150px;
   color: #941b0c;
 }
 
@@ -107,7 +110,6 @@ tr:first-child th {
   border: 0;
   background-color: #f4f4f9;
   font-family: "Times New Roman", Times, serif, serif;
-  /* background-color: green; */
 }
 
 tr:last-child {
@@ -118,6 +120,186 @@ tr:last-child td:not(:first-child) {
   color: #220901;
 }
 
+/* Add location button style */
+.add-location-btn {
+  margin: 20px 0;
+  width: fit-content;
+  border: none;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  background: #2b4162;
+  color: #f4f4f9;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.add-location-btn:hover,
+.add-location-btn:focus {
+  background: #941b0c;
+  color: #f4f4f9;
+}
+
+.add-location-btn:focus {
+  outline: 1px solid #feeeee;
+  outline-offset: -4px;
+}
+
+.add-location-btn:active {
+  transform: scale(0.99);
+}
+
+.add-location-btn span{
+  margin-right: 10px;
+}
+
+/* Modal style */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+ 
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: #333;
+  position: absolute;
+  float: right;
+  font-size: 28px;
+  right: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #941b0c;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  margin-top: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333;
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 20px 100px;
+
+}
+
+
+
+/* Form style */
+/* Full-width input fields */
+input[type=text], input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.submitBtn {
+  background-color: #2b4162;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  font-size: large;
+  text-transform: uppercase;
+
+}
+
+.submitBtn:hover {
+  opacity: 1;
+}
+
+.submitBtn:hover,
+.submitBtn:focus {
+  background: #941b0c;
+  color: #f4f4f9;
+}
+
+
+/* Add a blue text color to links
+a {
+  color: dodgerblue;
+} */
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+
+.footer2 {
+  text-align: center;
+  padding: 15px;
+  color: #f4f4f9;
+  background-color: #a31621;
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+}
 /* -----------HOME PAGE----------- */
 
 .over {
@@ -131,7 +313,6 @@ tr:last-child td:not(:first-child) {
   opacity: 0.5;
   background-color: black;
 }
-
 
 .welcome-container {
   position: relative;
@@ -205,15 +386,14 @@ tr:last-child td:not(:first-child) {
   transform: scale(0.99);
 }
 
-
 /* A breif Section */
 
 .breif-container {
   margin: 0 130px;
 }
-.breif-container p{
-font-family: Arial, Helvetica, sans-serif;
-color: #2B4162;
+.breif-container p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2b4162;
 }
 
 .breif-title {
@@ -226,7 +406,6 @@ color: #2B4162;
 .breif-paragraph {
   margin: 0 0 30px 0;
   padding: 0;
- 
 }
 
 .breif-paragraph1 {
@@ -249,7 +428,7 @@ color: #2B4162;
   width: 50vw;
 }
 
- /* Featured Branch Section  */
+/* Featured Branch Section  */
 .Branch-container {
   /* margin-left: 100px;
   margin-right: 100px; */
@@ -257,7 +436,7 @@ color: #2B4162;
 
 .Branch-container p {
   font-family: Arial, Helvetica, sans-serif;
-  color: #2B4162;
+  color: #2b4162;
 }
 .bg-light-white {
   background-color: #fff;
@@ -286,14 +465,12 @@ color: #2B4162;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-row-gap: 30px;
-  left: 0;
-  right: 0;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .Branch-img {
   position: relative;
-  /* left: 0;
-  top: 0; */
   width: 350px;
   height: 450px;
   object-fit: cover;
@@ -303,39 +480,26 @@ color: #2B4162;
 }
 
 .Branch-list li {
- 
   margin: 0 auto;
 }
 
 .Branch-list li p {
- 
   margin: 10px 0;
   font-size: 1em;
 }
 
 .Branch-list li p i {
   margin-right: 10px;
-  color: #F6AA1C;
+  color: #f6aa1c;
 }
 
 /* footer section */
 
-.footer2{
+
+
+.footer1 {
   text-align: center;
   padding: 15px;
-  color: #F4F4F9;
-  background-color:#A31621 ;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-
+  color: #f4f4f9;
+  background-color: #a31621;
 }
-
-.footer1{
-  text-align: center;
-  padding: 15px;
-  color: #F4F4F9;
-  background-color:#A31621 ;
-}
-  
-

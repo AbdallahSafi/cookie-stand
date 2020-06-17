@@ -56,13 +56,12 @@ var dubai = new SalmonCookie('Dubai', 11, 38, 3.7);
 var paris = new SalmonCookie('Paris', 20, 65, 2.3);
 var lima = new SalmonCookie('Lima', 2, 16, 4.6);
 
-
-
 //-----------displaying all the table -------------
 
 //adding table element
 var container = document.getElementById('objContainer');
 var table = document.createElement('table');
+table.setAttribute('id', 'salmonTable');
 container.appendChild(table);
 
 displayHeader();
@@ -108,7 +107,14 @@ function displayData() {
     var dailyTotalCell = document.createElement('td');
     dailyTotalCell.textContent = this.totalCookiesPerLocation;
     dataRow.appendChild(dailyTotalCell);
-    table.appendChild(dataRow);
+
+    // here we will check if there is a total row so when we add new elements. will be add before that row
+    var totalRow = document.getElementById('total');
+    if (!totalRow) {
+      table.appendChild(dataRow);
+    } else {
+      table.insertBefore(dataRow, totalRow);
+    }
   };
 
   //----adding the functions to the objects-----
@@ -125,6 +131,7 @@ function displayFooter() {
   var totalsSum = getTotalPerhour()[1];
 
   var totalsRow = document.createElement('tr');
+  totalsRow.setAttribute('id', 'total');
   table.appendChild(totalsRow);
   //adding total label
   var totalsLabel = document.createElement('td');
@@ -166,4 +173,56 @@ function getTotalPerhour() {
     sumTotalPerHour = sumTotalPerHour + perHour;
   }
   return [totalPerHour, sumTotalPerHour];
+}
+
+// ------- Modal implementation ------------
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById('myBtn');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName('close')[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function () {
+  modal.style.display = 'block';
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
+// --------function to create new object----------
+
+// Getting the values of the form
+
+var locationForm = document.getElementById('locationForm');
+locationForm.addEventListener('submit', createObject);
+
+function createObject() {
+  event.preventDefault();
+  var name = document.getElementById('name').value;
+  var minimum = Number(document.getElementById('minimum').value);
+  var maximum = Number(document.getElementById('maximum').value);
+  var average = Number(document.getElementById('average').value);
+  var newObject = new SalmonCookie(name, minimum, maximum, average);
+  console.log(salmonObjs);
+  newObject.getCustomerRandom();
+  newObject.getCookiesNum();
+  newObject.render();
+  var salmonTable = document.getElementById('salmonTable');
+  salmonTable.deleteRow(salmonObjs.length + 1);
+  displayFooter();
+  modal.style.display = 'none';
 }
