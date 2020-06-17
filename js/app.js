@@ -217,7 +217,7 @@ function createObject() {
   var maximum = Number(document.getElementById('maximum').value);
   var average = Number(document.getElementById('average').value);
   var newObject = new SalmonCookie(name, minimum, maximum, average);
-  console.log(salmonObjs);
+  // console.log(salmonObjs);
   newObject.getCustomerRandom();
   newObject.getCookiesNum();
   newObject.render();
