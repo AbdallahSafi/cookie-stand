@@ -247,9 +247,7 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
-/* Overwrite default styles of hr */
 hr {
-  border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
 
@@ -279,16 +277,6 @@ hr {
 }
 
 
-/* Add a blue text color to links
-a {
-  color: dodgerblue;
-} */
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}
 
 
 .footer2 {
@@ -392,7 +380,7 @@ a {
   margin: 0 130px;
 }
 .breif-container p {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   color: #2b4162;
 }
 
@@ -458,6 +446,8 @@ a {
   margin: 0 0 30px 0;
   padding: 0;
   color: #636466;
+  font-family: 'Times New Roman', Times, serif !important;
+
 }
 
 .Branch-list {
@@ -486,6 +476,7 @@ a {
 .Branch-list li p {
   margin: 10px 0;
   font-size: 1em;
+  color: #2C514C;
 }
 
 .Branch-list li p i {
